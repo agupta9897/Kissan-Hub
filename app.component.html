@@ -1,0 +1,36 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div style="text-align:center">
+  <h1>Welcome to {{ title }}!</h1>
+
+  <div>
+  
+		<select [(ngModel)]="selectedRegion" (ngModelChange)="onSelectRegion($event)">
+			<option value='UK'>UK</option>
+			<option value='England'>England</option>
+			<option value='Scotland'>Scotland</option>
+			<option value='Wales'>Wales</option>
+		</select>
+  
+		<select [(ngModel)]="selectedMetric" (ngModelChange)="onSelectMetric($event)">
+			<option value='Tmax'>Tmax</option>
+			<option value='Tmin'>Tmin</option>
+			<option value='Rainfall'>Rainfall</option>
+		</select>
+  
+		<input name='start' [(ngModel)]="start" (ngModelChange)="onChangeStart($event)" type="date">
+		<input name='end' [(ngModel)]="end" (ngModelChange)="onChangeEnd($event)" type="date">
+		
+  </div>
+  
+  <br>
+  <br>
+  <div id="chartContainer" style="height: 370px; width: 100%; margin-left:auto;margin-right:auto;"></div>
+  
+  <!-- <li [(ngModel)]="tmax" *ngFor="let l of tmax" ngDefaultControl>
+	<span>{{l.value}}  {{l.year}}  {{l.month}}</span>
+  </li> -->
+  
+</div>
+
+<router-outlet></router-outlet>
